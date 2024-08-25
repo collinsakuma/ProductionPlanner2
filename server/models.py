@@ -22,3 +22,9 @@ class Operation(db.MOdel, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     operation_name = db.Column(db.String)
     machine_id = db.Column(db.Integer, db.ForeignKey('machines.id'))
+
+class Route(db.Model, SerializerMixin):
+    __tablename__ = 'routes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    item_id = db.Column(db.Integer)
