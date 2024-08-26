@@ -28,3 +28,14 @@ class Route(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer)
+
+    routes = db.relationship('Item', backref='route')
+
+class Item(db.Model, SerializerMixin):
+    __tablename__ = 'items'
+
+    id = db.Column(db.Integer, primary_key=True)
+    item_name = db.Column(db.String)
+    route_id = db.Column(db.Integer, db.ForeignKey('routes.id'))
+
+    serialize_rules = ('-route')
