@@ -23,13 +23,16 @@ class Operation(db.MOdel, SerializerMixin):
     operation_name = db.Column(db.String)
     machine_id = db.Column(db.Integer, db.ForeignKey('machines.id'))
 
+    route_operations = db.relationship('RouteOperation', backref='operation')
+
 class Route(db.Model, SerializerMixin):
     __tablename__ = 'routes'
 
     id = db.Column(db.Integer, primary_key=True)
-    item_id = db.Column(db.Integer)
+    # item_id = db.Column(db.Integer)
 
-    routes = db.relationship('Item', backref='route')
+    # items = db.relationship('Item', backref='route')
+    route_operations = db.relationship('RouteOperation', backref='route')
 
 class Item(db.Model, SerializerMixin):
     __tablename__ = 'items'
@@ -39,3 +42,12 @@ class Item(db.Model, SerializerMixin):
     route_id = db.Column(db.Integer, db.ForeignKey('routes.id'))
 
     serialize_rules = ('-route')
+
+class RouteOperation(db.Model, SerializerMixin):
+    __tablename__ = 'route_operations'
+
+    serialize_rules = ('-route', '-operation')
+
+    id = db.Column(db.Integer, primary_key=True)
+    route_id = db.Column(db.Integer, db.ForeignKey('routes.id'))
+    operation_id = db.Column(db.Integer, db.ForeignKey('operations.id'))
