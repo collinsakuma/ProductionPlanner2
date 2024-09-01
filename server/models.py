@@ -29,9 +29,7 @@ class Route(db.Model, SerializerMixin):
     __tablename__ = 'routes'
 
     id = db.Column(db.Integer, primary_key=True)
-    # item_id = db.Column(db.Integer)
 
-    # items = db.relationship('Item', backref='route')
     route_operations = db.relationship('RouteOperation', backref='route')
 
 class Item(db.Model, SerializerMixin):
