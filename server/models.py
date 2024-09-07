@@ -29,6 +29,7 @@ class Route(db.Model, SerializerMixin):
     __tablename__ = 'routes'
 
     id = db.Column(db.Integer, primary_key=True)
+    sequence = db.Column(db.String)
 
     route_operations = db.relationship('RouteOperation', backref='route')
 
@@ -38,6 +39,16 @@ class Item(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.String)
     route_id = db.Column(db.Integer, db.ForeignKey('routes.id'))
+    item_length = db.Column(db.Integer)
+    item_width = db.Column(db.Integer)
+    item_shank_length = db.Column(db.Integer)
+    has_flats = db.Column(db.Boolean)
+    has_neck = db.Column(db.Boolean)
+    item_neck_length = db.Column(db.Integer)
+    item_radius = db.Column(db.Integer)
+    item_coating = db.Column(db.string) # possibly needs to be its own table
+    has_edge_prep = db.Column(db.Boolean)
+    has_polishing = db.Column(db.Boolean)
 
     serialize_rules = ('-route')
 
