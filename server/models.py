@@ -23,15 +23,11 @@ class Operation(db.MOdel, SerializerMixin):
     operation_name = db.Column(db.String)
     machine_id = db.Column(db.Integer, db.ForeignKey('machines.id'))
 
-    route_operations = db.relationship('RouteOperation', backref='operation')
-
 class Route(db.Model, SerializerMixin):
     __tablename__ = 'routes'
 
     id = db.Column(db.Integer, primary_key=True)
     sequence = db.Column(db.String)
-
-    route_operations = db.relationship('RouteOperation', backref='route')
 
 class Item(db.Model, SerializerMixin):
     __tablename__ = 'items'
@@ -51,12 +47,3 @@ class Item(db.Model, SerializerMixin):
     has_polishing = db.Column(db.Boolean)
 
     serialize_rules = ('-route')
-
-class RouteOperation(db.Model, SerializerMixin):
-    __tablename__ = 'route_operations'
-
-    serialize_rules = ('-route', '-operation')
-
-    id = db.Column(db.Integer, primary_key=True)
-    route_id = db.Column(db.Integer, db.ForeignKey('routes.id'))
-    operation_id = db.Column(db.Integer, db.ForeignKey('operations.id'))
