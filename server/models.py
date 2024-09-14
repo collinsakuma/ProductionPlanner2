@@ -47,3 +47,6 @@ class Item(db.Model, SerializerMixin):
     has_polishing = db.Column(db.Boolean)
 
     serialize_rules = ('-route')
+
+# class Coating(db.Model, SerializerMixin):
+#   __tablename__ = 'coatings'
