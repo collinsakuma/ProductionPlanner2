@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
         print('Seeding Finished...')
 
-        # seed the machine table
+        # seed the machines table
         machine_1 = Machine(
             machine_name = 'endmill_grind_1'
         )
@@ -23,4 +23,21 @@ if __name__ == '__main__':
         )
         machine_3 = Machine(
             machine_name = 'endmill_grind_3'
+        )
+
+        # seed the operations table
+        operation_1 = Operation(
+            operation_name = 'endmill grind'
+        )
+        operation_2 = Operation(
+            operation_name = 'cut'
+        )
+        operation_3 = Operation(
+            operation_name = 'edge prep'
+        )
+        operation_4 = Operation(
+            operation_name = 'polish'
+        )
+        operation_5 = Operation(
+            operation_name = ''
         )
