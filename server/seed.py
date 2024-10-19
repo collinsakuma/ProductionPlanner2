@@ -62,6 +62,7 @@ if __name__ == '__main__':
             has_polishing = True
         )
 
+        # add to tables
         db.session.add_all([machine_1, machine_2, machine_3, operation_1, operation_2, operation_3, operation_4, operation_5,
                             route_1, item_1])
         
