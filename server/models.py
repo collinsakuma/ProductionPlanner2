@@ -38,7 +38,7 @@ class Item(db.Model, SerializerMixin):
     item_length = db.Column(db.Integer)
     item_width = db.Column(db.Integer)
     item_shank_length = db.Column(db.Integer)
-    has_flats = db.Column(db.Boolean, default=False)
+    has_flats = db.Column(db.Boolean, default=False) # add defaults ???
     has_neck = db.Column(db.Boolean, default=False)
     item_neck_length = db.Column(db.Integer)
     item_radius = db.Column(db.Integer)
