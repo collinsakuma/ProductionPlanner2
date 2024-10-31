@@ -44,7 +44,11 @@ if __name__ == '__main__':
 
         # seed the routes table 
         route_1 = Route(
-            sequence = ''
+            sequence = 'cut*endmill grind*edge prep*polish*coating'
+        )
+
+        route = Route(
+            sequence = 'neck grind*endmill grind*edge prep*polish*coating'
         )
 
         # seed the items table
