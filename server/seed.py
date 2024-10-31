@@ -61,9 +61,22 @@ if __name__ == '__main__':
             has_edge_prep = True,
             has_polishing = True
         )
+        item_2 = Item(
+            item_name = 'endmill_2',
+            # route_id = '',
+            item_length = 76.,
+            item_width = 14,
+            item_shank_length = 30,
+            has_flats = False,
+            has_neck = False,
+            item_neck_length = 0,
+            item_coating = 'C01',
+            has_edge_prep = True,
+            has_polishing = True
+        )
 
         # add to tables
         db.session.add_all([machine_1, machine_2, machine_3, operation_1, operation_2, operation_3, operation_4, operation_5,
-                            route_1, item_1])
+                            route_1, item_1, item_2])
         
         db.session.commit()
