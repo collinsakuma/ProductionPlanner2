@@ -43,11 +43,12 @@ if __name__ == '__main__':
         )
 
         # seed the routes table 
+        # initial routing probably wrong????
         route_1 = Route(
             sequence = 'cut*endmill grind*edge prep*polish*coating'
         )
 
-        route = Route(
+        route_2 = Route(
             sequence = 'neck grind*endmill grind*edge prep*polish*coating'
         )
 
