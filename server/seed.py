@@ -39,7 +39,7 @@ if __name__ == '__main__':
             operation_name = 'polish'
         )
         operation_5 = Operation(
-            operation_name = ''
+            operation_name = 'neck grind'
         )
 
         # seed the routes table 
