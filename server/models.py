@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+# note to fix import
 from sqlalchemy_serializer import SerializerMixin
 
 from config import db
