@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 # note to fix import
-from sqlalchemy_serializer import SerializerMixin
+from sqlalchemy_serializer import SerializerMixin  # type: ignore
 
 from config import db
 
