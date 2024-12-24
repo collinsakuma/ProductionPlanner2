@@ -4,7 +4,7 @@ from sqlalchemy_serializer import SerializerMixin  # type: ignore
 
 from config import db
 
-
+# machines table
 class Machine(db.Model, SerializerMixin):
     __tablename__ = 'machines'
 
