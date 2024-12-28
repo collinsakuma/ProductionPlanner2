@@ -15,6 +15,7 @@ class Machine(db.Model, SerializerMixin):
 
     operations = db.relationship('Operation', backref='machine')
 
+# operations table
 class Operation(db.MOdel, SerializerMixin):
     __tablename__ = 'operations'
 
