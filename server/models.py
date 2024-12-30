@@ -32,6 +32,7 @@ class Route(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     sequence = db.Column(db.String)
 
+# items table
 class Item(db.Model, SerializerMixin):
     __tablename__ = 'items'
 
